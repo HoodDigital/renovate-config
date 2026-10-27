@@ -45,6 +45,12 @@
       "schedule": ["before 9am on monday"]
     },
     {
+      "description": "One PR for every NuGet minor and patch update, so a private repo pays for one build instead of one per package. The .NET SDK in global.json is the dotnet-version datasource, so it keeps its own PR.",
+      "groupName": "NuGet packages",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
       "description": "These packages must move in the same PR, because a new one beside an old one throws a TypeLoadException.",
       "groupName": "Auth0",
       "matchManagers": ["nuget"],
